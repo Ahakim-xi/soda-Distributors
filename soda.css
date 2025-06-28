@@ -1,113 +1,144 @@
-
-body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  margin: 30px;
-  background-color: #f9f9f9;
-  color: #333;
+/* Reset some default styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* Body with subtle gradient background */
+body {
+  background: linear-gradient(135deg, #f8f9fa, #dfe6e9);
+  color: #333;
+  padding: 20px;
+}
 
+/* Header styling */
 header {
   text-align: center;
   margin-bottom: 40px;
-  padding-bottom: 10px;
-  border-bottom: 2px solid #ccc;
 }
 
 header h1 {
-  font-size: 36px;
+  font-size: 3rem;
+  letter-spacing: 5px;
   margin-bottom: 10px;
+  color: #2d3436;
 }
 
-header nav a {
-  font-size: 16px;
-  text-decoration: none;
-  color: #007BFF;
+header p {
+  font-size: 1.2rem;
+  color: #636e72;
 }
 
-header nav a:hover {
-  text-decoration: underline;
-}
-
-.form-section {
+/* Main content container */
+main {
+  max-width: 900px;
+  margin: 0 auto;
   background-color: #fff;
-  padding: 20px;
-  margin-bottom: 40px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  max-width: 500px;
+  padding: 30px 40px;
+  border-radius: 10px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
 }
 
-.form-section h2 {
+/* Section Titles */
+h2 {
   margin-bottom: 20px;
+  color: #0984e3;
+  border-bottom: 2px solid #0984e3;
+  padding-bottom: 5px;
+  letter-spacing: 2px;
 }
 
-.form-section label {
-  font-weight: bold;
-}
-
-.form-section input,
-.form-section select,
-.form-section button {
-  width: 100%;
-  padding: 8px;
-  margin-top: 5px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-.form-section button {
-  background-color: #28a745;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
-
-.form-section button:hover {
-  background-color: #218838;
-}
-
-.contact-info {
-  margin-bottom: 40px;
-  background-color: #fff;
-  padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  max-width: 400px;
-}
-
-#sodas {
-  background-color: #fff;
-  padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-}
-
-#sodas h2 {
-  margin-bottom: 20px;
-}
-
-#sodas p {
-  margin-top: 20px;
-  font-weight: bold;
-}
-
-#sodas img {
+/* Form labels and inputs */
+label {
   display: block;
-  width: 200px;
-  height: auto;
-  margin-top: 5px;
-  margin-bottom: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  margin-top: 15px;
+  font-weight: 600;
+  color: #2d3436;
 }
 
-@media (min-width: 600px) {
-  #sodas img {
-    display: inline-block;
-    margin-right: 20px;
-    margin-bottom: 30px;
+select, input[type="number"] {
+  width: 100%;
+  padding: 8px 12px;
+  margin-top: 5px;
+  border: 1.8px solid #b2bec3;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+select:focus, input[type="number"]:focus {
+  border-color: #0984e3;
+  outline: none;
+}
+
+/* Button styling */
+button {
+  margin-top: 25px;
+  padding: 12px 25px;
+  background-color: #0984e3;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #74b9ff;
+}
+
+/* Soda details container */
+#soda-details {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-top: 20px;
+  border: 1px solid #dfe6e9;
+  padding: 15px 20px;
+  border-radius: 10px;
+  background-color: #f0f4f8;
+}
+
+#soda-image {
+  width: 150px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+#soda-info p {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+
+/* Highlight Coca Cola name in red */
+#soda-name.coca-cola {
+  color: #e63946;
+  font-weight: 700;
+}
+
+/* Total price display */
+#total-display {
+  margin-top: 20px;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #2d3436;
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 600px) {
+  main {
+    padding: 20px;
+  }
+  #soda-details {
+    flex-direction: column;
+    text-align: center;
+  }
+  #soda-image {
+    margin: 0 auto;
   }
 }
