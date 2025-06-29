@@ -1,38 +1,34 @@
-/* Reset some default styles */
-* {
+ * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Body with subtle gradient background */
-body {
+  body {
   background: linear-gradient(135deg, #f8f9fa, #dfe6e9);
   color: #333;
   padding: 20px;
 }
 
-/* Header styling */
-header {
+  header {
   text-align: center;
   margin-bottom: 40px;
 }
 
-header h1 {
+  header h1 {
   font-size: 3rem;
   letter-spacing: 5px;
   margin-bottom: 10px;
   color: #2d3436;
 }
 
-header p {
+  header p {
   font-size: 1.2rem;
   color: #636e72;
 }
 
-/* Main content container */
-main {
+  main {
   max-width: 900px;
   margin: 0 auto;
   background-color: #fff;
@@ -41,8 +37,7 @@ main {
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Section Titles */
-h2 {
+  h2 {
   margin-bottom: 20px;
   color: #0984e3;
   border-bottom: 2px solid #0984e3;
@@ -50,15 +45,14 @@ h2 {
   letter-spacing: 2px;
 }
 
-/* Form labels and inputs */
-label {
+  label {
   display: block;
   margin-top: 15px;
   font-weight: 600;
   color: #2d3436;
 }
 
-select, input[type="number"] {
+  select, input[type="number"] {
   width: 100%;
   padding: 8px 12px;
   margin-top: 5px;
@@ -68,13 +62,12 @@ select, input[type="number"] {
   transition: border-color 0.3s ease;
 }
 
-select:focus, input[type="number"]:focus {
+  select:focus, input[type="number"]:focus {
   border-color: #0984e3;
   outline: none;
 }
 
-/* Button styling */
-button {
+  button {
   margin-top: 25px;
   padding: 12px 25px;
   background-color: #0984e3;
@@ -87,12 +80,11 @@ button {
   transition: background-color 0.3s ease;
 }
 
-button:hover {
+  button:hover {
   background-color: #74b9ff;
 }
 
-/* Soda details container */
-#soda-details {
+  #soda-details {
   display: flex;
   align-items: center;
   gap: 20px;
@@ -103,34 +95,52 @@ button:hover {
   background-color: #f0f4f8;
 }
 
-#soda-image {
+  #soda-image {
   width: 150px;
   height: auto;
   border-radius: 8px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-#soda-info p {
+  #soda-info p {
   font-size: 1.1rem;
   margin-bottom: 8px;
 }
 
-/* Highlight Coca Cola name in red */
-#soda-name.coca-cola {
+  #soda-name.coca-cola {
   color: #e63946;
   font-weight: 700;
 }
 
-/* Total price display */
-#total-display {
+  #total-display {
   margin-top: 20px;
   font-size: 1.3rem;
   font-weight: 700;
   color: #2d3436;
 }
 
-/* Responsive for smaller screens */
-@media (max-width: 600px) {
+#contact-info {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  max-width: 250px;
+  background-color: #fff;
+  border: 1px solid #b2bec3;
+  padding: 15px 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  font-size: 0.9rem;
+  color: #2d3436;
+  z-index: 1000;
+}
+
+#contact-info h3 {
+  margin-bottom: 10px;
+  color: #0984e3;
+  font-weight: 700;
+}
+
+  @media (max-width: 600px) {
   main {
     padding: 20px;
   }

@@ -12,8 +12,10 @@
     <p>Welcome to our soda distribution company</p>
   </header>
 
-  <main>
-    <section>
+  <main style="display: flex; justify-content: space-between; gap: 50px; padding: 20px;">
+
+    <!-- Order Section -->
+    <section style="flex: 2;">
       <h2>Place an Order</h2>
 
       <label for="soda-select">Select a Soda:</label>
@@ -21,7 +23,7 @@
         <option value="">-- Choose a soda --</option>
       </select>
 
-      <div id="soda-details" style="display: none;">
+      <div id="soda-details" style="display: none; margin-top: 10px;">
         <img id="soda-image" src="" alt="Soda Image" width="150" />
         <div id="soda-info">
           <p><strong id="soda-name"></strong></p>
@@ -51,6 +53,16 @@
 
       <p id="total-display"></p>
     </section>
+
+    
+<aside id="contact-info">
+  <h3>Contact Information</h3>
+  <p><strong>Email:</strong> soda.distributors@hotmail.com</p>
+  <p><strong>Phone:</strong> +254 708 026 201</p>
+  <p><strong>Location:</strong> Nairobi, Kenya</p>
+  <p><strong>Working Hours:</strong> 8:00am – 8:00pm (Mon–Sat)</p>
+</aside>
+
   </main>
 
   <script src="script.js"></script>
