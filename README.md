@@ -40,28 +40,26 @@ This project demonstrates dynamic data fetching from a JSON server, interactive 
 
 5. Open index.html in your web browser.
 
-Usage
-Select a soda from the dropdown menu.
+## Usage
+- Select a soda from the dropdown menu.  
+- Enter a valid quantity.  
+- Choose soda size and delivery preference.  
+- Click **Calculate Total** to see the final cost.  
+- Contact info is visible at the bottom right corner of the page.
 
-Enter a valid quantity.
-
-Choose soda size and delivery preference.
-
-Click Calculate Total to see the final cost.
-
-Contact info is visible at the bottom right corner of the page.
-
+## File Structure
 /soda-distributors
-├── index.html       # Main HTML file
-├── soda.css         # Stylesheet for the project
-├── script.js        # JavaScript file handling logic and data fetching
-├── db.json          # JSON database simulating backend data
-└── README.md        # Project documentation
+├── index.html # Main HTML file
+├── soda.css # Stylesheet for the project
+├── script.js # JavaScript file handling logic and data fetching
+├── db.json # JSON database simulating backend data
+└── README.md # Project documentation
 
+markdown
+Copy
+Edit
 
-Author
-Abdihakim Ali
-
-
+## Author
+**Abdihakim Ali**
 
 
