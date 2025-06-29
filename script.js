@@ -14,13 +14,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let sodas = [];
 
-  // Fetch sodas from your local JSON server
+
   fetch("http://localhost:3000/sodas")
     .then(res => res.json())
     .then(data => {
       sodas = data;
 
-      // Populate dropdown
+    
       sodas.forEach(soda => {
         const option = document.createElement("option");
         option.value = soda.name;
@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
       totalDisplay.textContent = "Error loading sodas.";
     });
 
-  // When user selects a soda, show details
+
   sodaSelect.addEventListener("change", () => {
     const selectedName = sodaSelect.value;
     const selectedSoda = sodas.find(s => s.name === selectedName);
@@ -54,10 +54,10 @@ document.addEventListener("DOMContentLoaded", () => {
       sodaPrice.textContent = "";
     }
 
-    totalDisplay.textContent = ""; // clear previous total
+    totalDisplay.textContent = "";
   });
 
-  // Calculate total on button click
+
   calculateBtn.addEventListener("click", () => {
     const selectedName = sodaSelect.value;
     const quantity = parseInt(quantityInput.value);
@@ -79,10 +79,10 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    // Base price from soda (your db.json shows price 50 KES for all, but you can customize)
+
     const basePrice = selectedSoda.price;
 
-    // Size price additions (based on your HTML options)
+  
     let sizePrice = 0;
     switch (sizeValue) {
       case "300ml":
@@ -101,10 +101,10 @@ document.addEventListener("DOMContentLoaded", () => {
         sizePrice = 0;
     }
 
-    // Delivery fee
+ 
     const deliveryFee = deliveryValue === "yes" ? 250 : 0;
 
-    // Calculate total price
+
     const total = quantity * sizePrice + deliveryFee;
 
     totalDisplay.textContent = `Total Price: ${total} KES`;
