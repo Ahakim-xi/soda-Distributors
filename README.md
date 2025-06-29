@@ -1,5 +1,4 @@
 SODA DISTRIBUTORS LTD
-
 Project Overview
 Soda Distributors Ltd is a simple web application designed to facilitate the ordering of various soda beverages. Users can select their preferred soda, choose quantity, size, and delivery options, and calculate the total cost of their order.
 
@@ -14,18 +13,18 @@ Selection of quantity, soda size, and delivery options.
 
 Real-time total cost calculation based on selections.
 
-Responsive design optimized for users
+Responsive design optimized for users.
 
 Contact information fixed at the bottom right to facilitate easier communication.
 
 Technologies Used
-HTML
+HTML for markup.
 
-CSS for styling
+CSS for styling.
 
-JavaScript for interactivity and data fetching
+JavaScript for interactivity and data fetching.
 
-JSON Server to simulate backend API for soda data
+JSON Server to simulate backend API for soda data.
 
 Setup Instructions
 Clone the repository:
@@ -36,14 +35,23 @@ Edit
 git clone git@github.com:Ahakim-xi/soda-Distributors.git
 Navigate into the project directory:
 
+bash
+Copy
+Edit
 cd soda-distributors
+Install JSON Server globally (if you haven't already):
 
-Install JSON Server globally if you haven't already:
-
+bash
+Copy
+Edit
 npm install -g json-server
 Start the JSON Server:
+
+bash
+Copy
+Edit
 json-server --watch db.json
-This will run the server on http://localhost:3000/sodas.
+This will run the server on: http://localhost:3000/sodas
 
 Open index.html in your web browser.
 
@@ -64,15 +72,14 @@ Copy
 Edit
 /soda-distributors
 │
-├── index.html           # Main HTML file
-├── soda.css             # Stylesheet for the project
-├── script.js            # JavaScript file handling logic and data fetching
-├── db.json              # JSON database simulating backend data
-└── README.md            # Project documentation
-
-
+├── index.html       # Main HTML file
+├── soda.css         # Stylesheet for the project
+├── script.js        # JavaScript file handling logic and data fetching
+├── db.json          # JSON database simulating backend data
+└── README.md        # Project documentation
 Author
 Abdihakim Ali
+
 
 
 
