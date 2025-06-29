@@ -55,9 +55,6 @@ This project demonstrates dynamic data fetching from a JSON server, interactive 
 ├── db.json # JSON database simulating backend data
 └── README.md # Project documentation
 
-markdown
-Copy
-Edit
 
 ## Author
 **Abdihakim Ali**
