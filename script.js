@@ -14,45 +14,55 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let sodas = [];
 
+  function fetchSodas() {
+    const url = "https://raw.githubusercontent.com/Ahakim-xi/soda-Distributors/refs/heads/main/sodas.json"; 
 
-  fetch("http://localhost:3000/sodas")
-    .then(res => res.json())
-    .then(data => {
-      sodas = data;
-
-    
-      sodas.forEach(soda => {
-        const option = document.createElement("option");
-        option.value = soda.name;
-        option.textContent = soda.name;
-        sodaSelect.appendChild(option);
+    fetch(url)
+      .then(res => res.json())
+      .then(data => {
+        sodas = data;
+        displaySodaOptions(sodas);
+      })
+      .catch(() => {
+        displayError("Failed to load sodas. Please try again.");
       });
-    })
-    .catch(err => {
-      console.error("Failed to fetch sodas:", err);
-      sodaDetails.style.display = "none";
-      totalDisplay.textContent = "Error loading sodas.";
-    });
+  }
 
+  function displaySodaOptions(sodaList) {
+    sodaSelect.innerHTML = `<option value="">-- Choose a soda --</option>`;
+    sodaList.forEach(soda => {
+      const option = document.createElement("option");
+      option.value = soda.name;
+      option.textContent = soda.name;
+      sodaSelect.appendChild(option);
+    });
+  }
+
+  function displayError(message) {
+    sodaDetails.style.display = "none";
+    totalDisplay.textContent = message;
+  }
+
+  function showSodaDetails(soda) {
+    sodaDetails.style.display = "flex";
+    sodaImage.src = soda.image;
+    sodaImage.alt = soda.name;
+    sodaName.textContent = soda.name;
+    sodaFlavor.textContent = `Flavor: ${soda.flavor}`;
+    sodaPrice.textContent = `Price: ${soda.price} KES`;
+  }
 
   sodaSelect.addEventListener("change", () => {
     const selectedName = sodaSelect.value;
     const selectedSoda = sodas.find(s => s.name === selectedName);
 
     if (selectedSoda) {
-      sodaDetails.style.display = "flex";
-      sodaImage.src = selectedSoda.image;
-      sodaImage.alt = selectedSoda.name;
-      sodaName.textContent = selectedSoda.name;
-      sodaFlavor.textContent = `Flavor: ${selectedSoda.flavor}`;
-      sodaPrice.textContent = `Price: ${selectedSoda.price} KES`;
+      showSodaDetails(selectedSoda);
     } else {
       sodaDetails.style.display = "none";
-      sodaImage.src = "";
-      sodaName.textContent = "";
-      sodaFlavor.textContent = "";
-      sodaPrice.textContent = "";
+
     }
+
 
     totalDisplay.textContent = "";
   });
@@ -68,6 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
       alert("Please select a soda.");
       return;
     }
+
     if (!quantity || quantity <= 0 || isNaN(quantity)) {
       alert("Please enter a valid quantity.");
       return;
@@ -79,29 +90,15 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-
-    const basePrice = selectedSoda.price;
-
-  
     let sizePrice = 0;
     switch (sizeValue) {
-      case "300ml":
-        sizePrice = 50;
-        break;
-      case "500ml":
-        sizePrice = 80;
-        break;
-      case "1L":
-        sizePrice = 120;
-        break;
-      case "2L":
-        sizePrice = 180;
-        break;
-      default:
-        sizePrice = 0;
+      case "300ml": sizePrice = 50; break;
+      case "500ml": sizePrice = 80; break;
+      case "1L": sizePrice = 120; break;
+      case "2L": sizePrice = 180; break;
+      default: sizePrice = 0;
     }
 
- 
     const deliveryFee = deliveryValue === "yes" ? 250 : 0;
 
 
@@ -109,4 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     totalDisplay.textContent = `Total Price: ${total} KES`;
   });
+
+  
+  fetchSodas();
 });
