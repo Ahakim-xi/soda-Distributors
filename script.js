@@ -14,19 +14,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let sodas = [];
 
-  function fetchSodas() {
-    const url = "https://raw.githubusercontent.com/Ahakim-xi/soda-Distributors/refs/heads/main/sodas.json"; 
-
-    fetch(url)
-      .then(res => res.json())
-      .then(data => {
-        sodas = data;
-        displaySodaOptions(sodas);
-      })
-      .catch(() => {
-        displayError("Failed to load sodas. Please try again.");
-      });
-  }
+  fetch("https://raw.githubusercontent.com/Ahakim-xi/soda-Distributors/refs/heads/main/sodas.json")
+    .then(res => {
+      if (!res.ok) throw new Error("Network response was not ok");
+      return res.json();
+    })
+    .then(data => {
+      sodas = data.sodas;
+      displaySodaOptions(sodas);
+    })
+    .catch(() => {
+      displayError("Failed to load sodas. Please try again.");
+    });
 
   function displaySodaOptions(sodaList) {
     sodaSelect.innerHTML = `<option value="">-- Choose a soda --</option>`;
@@ -107,6 +106,5 @@ document.addEventListener("DOMContentLoaded", () => {
     totalDisplay.textContent = `Total Price: ${total} KES`;
   });
 
-  
-  fetchSodas();
+
 });
